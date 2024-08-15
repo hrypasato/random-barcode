@@ -68,10 +68,9 @@ def main():
             st.success("Códigos de barras generados exitosamente. Haz clic en el enlace para descargar.")
 
             # Mostrar la tabla con los datos generados
-            df = pd.DataFrame(datos, columns=["Nombre del Producto", "Código EAN-13"])
-            df = df.style.hide()
+            df = pd.DataFrame(datos, columns=["Nombre del Producto", "Código EAN-13"], hi)
             st.subheader("Códigos EAN-13 Generados:")
-            st.table(df)
+            st.dataFrame(df.style.hide(), hide_index=True)
 
         else:
             st.error("Por favor, ingrese al menos un nombre de producto.")
