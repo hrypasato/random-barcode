@@ -5,3 +5,6 @@
 pip install -r requirements.txt
 
 ```
+
+### Iniciar proyecto
+streamlit run app.py
