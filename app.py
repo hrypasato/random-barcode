@@ -70,7 +70,7 @@ def main():
             # Mostrar la tabla con los datos generados
             df = pd.DataFrame(datos, columns=["Nombre del Producto", "Código EAN-13"], hide_index=True)
             st.subheader("Códigos EAN-13 Generados:")
-            st.table(df, hide_index=True)
+            st.table(df)
 
         else:
             st.error("Por favor, ingrese al menos un nombre de producto.")
