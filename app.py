@@ -52,7 +52,7 @@ def main():
 
     # Área de texto para ingresar los nombres de los productos
     productos_input = st.text_area("Ingrese los nombres de los productos (uno por línea):", 
-                                   "MANTECA BLANCA DE CHANCHO\nMANTECA NEGRA DE CHANCHO\nPASTA DE MANI LB\nPASTA DE MANI 12LB")
+                                   "PASTA DE MANI LB\nMANI 1LB")
 
     productos = [p.strip() for p in productos_input.split('\n') if p.strip()]
 
@@ -68,9 +68,10 @@ def main():
             st.success("Códigos de barras generados exitosamente. Haz clic en el enlace para descargar.")
 
             # Mostrar la tabla con los datos generados
-            df = pd.DataFrame(datos, columns=["Nombre del Producto", "Código EAN-13"], index=None)
+            df = pd.DataFrame(datos, columns=["Nombre del Producto", "Código EAN-13"])
             st.subheader("Códigos EAN-13 Generados:")
-            st.table(df)
+            st.table(df, hide_index=True)
+
         else:
             st.error("Por favor, ingrese al menos un nombre de producto.")
 
